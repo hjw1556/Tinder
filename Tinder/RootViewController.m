@@ -70,6 +70,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.loginView.nameText resignFirstResponder];
+    [self.loginView.emailText resignFirstResponder];
+    [self.loginView.passwordText resignFirstResponder];
+    
+}
+
 /*
 #pragma mark - Navigation
 

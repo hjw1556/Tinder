@@ -17,7 +17,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginBackgroundView : UIView
+@interface LoginBackgroundView : UIView<UITextFieldDelegate>
 //头像
 @property (nonatomic, strong) UIImageView* headImage;
 //头像上的提示lable

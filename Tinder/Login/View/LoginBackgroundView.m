@@ -8,6 +8,7 @@
 
 #import "LoginBackgroundView.h"
 #import "SDAutoLayout.h"
+#import "RegisteredTool.h"
 
 @implementation LoginBackgroundView
 
@@ -59,6 +60,8 @@
         _nameText.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 50)];
         _nameText.leftViewMode = UITextFieldViewModeAlways;
         _nameText.font = [UIFont systemFontOfSize:14];
+        _nameText.tag = 100;
+        _nameText.delegate = self;
     }
     return _nameText;
 }
@@ -74,6 +77,8 @@
         _emailText.font = [UIFont systemFontOfSize:14];
         _emailText.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 50)];
         _emailText.leftViewMode = UITextFieldViewModeAlways;
+        _emailText.tag = 101;
+        _emailText.delegate = self;
     }
     return _emailText;
 }
@@ -85,10 +90,13 @@
         //设置圆角
         _passwordText.layer.masksToBounds = YES;
         _passwordText.layer.cornerRadius = 20;
-        _passwordText.placeholder = @"Enter email";
+        _passwordText.placeholder = @"Enter password";
         _passwordText.font = [UIFont systemFontOfSize:14];
         _passwordText.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 20, 50)];
         _passwordText.leftViewMode = UITextFieldViewModeAlways;
+        _passwordText.tag = 102;
+        _passwordText.delegate = self;
+        _passwordText.secureTextEntry = YES;
     }
     return _passwordText;
 }
@@ -168,6 +176,36 @@
     }
 }
 
+#pragma mark - 输入框代理实现方法
+//开始编辑时调用
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.textColor = [UIColor blackColor];
+}
+//结束编辑时调用
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    
+    switch (textField.tag) {
+        case 100:
+            if(![RegisteredTool isVerificationName:textField.text]){
+                textField.textColor = [UIColor redColor];
+            }
+            break;
+        case 101:
+            if(![RegisteredTool isVerificationEmail:textField.text]){
+                textField.textColor = [UIColor redColor];
+            }
+            break;
+        case 102:
+            if(self.passwordText.text.length < 6 || self.passwordText.text.length > 20){
+                textField.textColor = [UIColor redColor];
+            }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

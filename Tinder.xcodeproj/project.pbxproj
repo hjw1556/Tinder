@@ -17,6 +17,7 @@
 		C52639FE2435C4BA000463F7 /* TinderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C52639FD2435C4BA000463F7 /* TinderUITests.m */; };
 		C5263A122435CA83000463F7 /* LoginBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5263A112435CA83000463F7 /* LoginBackgroundView.m */; };
 		C5263A152435D4DC000463F7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5263A142435D4DC000463F7 /* RootViewController.m */; };
+		C5263A302436D95B000463F7 /* RegisteredTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C5263A2F2436D95B000463F7 /* RegisteredTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		C5263A112435CA83000463F7 /* LoginBackgroundView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginBackgroundView.m; sourceTree = "<group>"; };
 		C5263A132435D4DC000463F7 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C5263A142435D4DC000463F7 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		C5263A2E2436D95B000463F7 /* RegisteredTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisteredTool.h; sourceTree = "<group>"; };
+		C5263A2F2436D95B000463F7 /* RegisteredTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisteredTool.m; sourceTree = "<group>"; };
 		C91C92FDA6EAC25B15965D9C /* libPods-Tinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -92,7 +95,6 @@
 				1647B5C5CC6B307C8066DCF5 /* Pods-Tinder.debug.xcconfig */,
 				0DD9C1F26F7B0C4BA25DF759 /* Pods-Tinder.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -164,6 +166,7 @@
 		C5263A0E2435CA51000463F7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C5263A2D2436D93C000463F7 /* Tool */,
 				C5263A0F2435CA5E000463F7 /* View */,
 			);
 			path = Login;
@@ -176,6 +179,15 @@
 				C5263A112435CA83000463F7 /* LoginBackgroundView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C5263A2D2436D93C000463F7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				C5263A2E2436D95B000463F7 /* RegisteredTool.h */,
+				C5263A2F2436D95B000463F7 /* RegisteredTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5263A302436D95B000463F7 /* RegisteredTool.m in Sources */,
 				C5263A122435CA83000463F7 /* LoginBackgroundView.m in Sources */,
 				C52639E92435C4BA000463F7 /* main.m in Sources */,
 				C5263A152435D4DC000463F7 /* RootViewController.m in Sources */,
